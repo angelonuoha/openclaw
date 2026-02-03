@@ -1,0 +1,93 @@
+{
+  "$schema": "https://moltbot.dev/schemas/plugin-config.json",
+  "id": "introduction-agent",
+  "name": "Introduction Agent",
+  "description": "Make introduction phone calls using VAPI AI with ElevenLabs voice",
+  "version": "2026.1.31",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true,
+        "title": "Enabled"
+      },
+      "vapiApiKey": {
+        "type": "string",
+        "title": "VAPI API Key",
+        "description": "API key from dashboard.vapi.ai",
+        "format": "password"
+      },
+      "vapiPhoneNumberId": {
+        "type": "string",
+        "title": "VAPI Phone Number ID",
+        "description": "Your outbound phone number ID in VAPI"
+      },
+      "defaultToNumber": {
+        "type": "string",
+        "title": "Default To Number",
+        "description": "Default phone number to call",
+        "pattern": "^\\+[1-9]\\d{1,14}$"
+      },
+      "ownerName": {
+        "type": "string",
+        "title": "Your Name",
+        "description": "Bella will introduce itself as 'your' AI assistant",
+        "default": "Angel"
+      },
+      "ownerPhone": {
+        "type": "string",
+        "title": "Your Phone",
+        "description": "Your callback phone number",
+        "default": "+18326166714"
+      },
+      "ownerEmail": {
+        "type": "string",
+        "title": "Your Email",
+        "default": "u.onuoha7@gmail.com"
+      },
+      "voiceId": {
+        "type": "string",
+        "title": "ElevenLabs Voice ID",
+        "description": "Voice ID for the phone calls (Angel's custom voice)",
+        "default": "LXYjKEgGhXKDA2YFbd8f"
+      },
+      "voiceStability": {
+        "type": "number",
+        "title": "Voice Stability",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.5
+      },
+      "voiceSimilarityBoost": {
+        "type": "number",
+        "title": "Voice Similarity Boost",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.75
+      },
+      "useSpeakerBoost": {
+        "type": "boolean",
+        "title": "Use Speaker Boost",
+        "description": "Enable speaker boost for clarity",
+        "default": true
+      },
+      "maxDurationSeconds": {
+        "type": "number",
+        "title": "Max Call Duration (seconds)",
+        "default": 300
+      },
+      "responseDelaySeconds": {
+        "type": "number",
+        "title": "Response Delay (seconds)",
+        "default": 1.0
+      },
+      "silenceTimeoutSeconds": {
+        "type": "number",
+        "title": "Silence Timeout (seconds)",
+        "default": 30
+      }
+    },
+    "required": ["vapiApiKey"]
+  }
+}
