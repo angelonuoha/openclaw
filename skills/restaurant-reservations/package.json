@@ -1,0 +1,13 @@
+{
+  "name": "restaurant-reservations",
+  "version": "1.0.0",
+  "description": "AI-powered restaurant reservation system using Google Places and Vapi",
+  "type": "module",
+  "main": "make-reservation.mjs",
+  "scripts": {
+    "test": "node make-reservation.mjs --help"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0"
+  }
+}
